@@ -1,16 +1,26 @@
+:root {
+    /* Background colors */
+    --pirmary-background: hsl(210 100% 8%);
+
+    /* Font colors */
+    --white-text-color: hsl(210 100% 95%)
+}
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 html {
-    font-family: monospace, sans-serif;
-    color: hsl(210 92% 98%);
+    color: var(--white-text-color);
     font-size: 62.5%;
+    font-family: monospace, sans-serif;
+    box-sizing: border-box;
+}
+body {
+    min-block-size: 100vh;
 }
 .container {
-    background-color: hsl(210 100% 8%);
+    background-color: var(--pirmary-background);
     block-size: 100vh;
     inline-size: 100%;
-    font-size: 4.5rem;
 }
