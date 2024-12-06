@@ -4,14 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <title>Todo list with VanillaJS</title>
+    <title>Todo with VanillaJS</title>
 </head>
 <body>
-    <div class="app-container">
-        <h1 class="app-title">Todos</h1>
-        <ul class="todo-container">
-            <li class="todo-item">Buy Groceries<span class="todo-icon edit-icon">✏️</span><span class="todo-icon del-icon">🗑️</span></li>
+    <!-- Start of todo app -->
+    <div class="todo-app">
+        <!-- App title -->
+        <h1 class="todo-app__title">Todos</h1>
+        <!-- Start of input -->
+        <div class="todo-app__input">
+            <!-- input -->
+            <input type="text" placeholder="insert new todo">
+            <!-- submit button -->
+            <input type="submit" value="Submit" />
+        </div>
+        <!-- End of input -->
+         <!-- Start of todo list -->
+        <ul class="todo-list">
+            <!-- Start of list item -->
+            <li class="todo-list__item todo">
+                Buy Groceries
+                <!-- item icon -->
+                <span class="todo__icon todo__icon--edit">✏️</span>
+                <!-- item icon -->
+                <span class="todo__icon todo__icon--del">🗑️</span>
+            </li>
+            <!-- End of list item -->
         </ul>
+        <!-- End of todo list -->
     </div>
+    <!-- End of todo app -->
 </body>
 </html>

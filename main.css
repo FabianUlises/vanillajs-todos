@@ -1,10 +1,9 @@
 :root {
     /* Background colors */
-    --pirmary-background: hsl(210 100% 8%);
-    --secondary-background: hsla(210 2% 8% / .8);
-
+    --pirmary-background: hsl(230 2% 3%);
+    --secondary-background: hsla(230 30% 8% / .8);
     /* Font colors */
-    --white-text-color: hsl(210 100% 95%)
+    --white-text-color: hsl(230 100% 95%);
 }
 * {
     margin: 0;
@@ -24,9 +23,7 @@ body {
     align-items: center;
     background-color: var(--pirmary-background);
 }
-.container {
-}
-.app-container {
+.todo-app {
     inline-size: 100%;
     max-inline-size: 400px;
     background-color: var(--secondary-background);
