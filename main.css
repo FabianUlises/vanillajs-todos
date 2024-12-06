@@ -1,6 +1,7 @@
 :root {
     /* Background colors */
     --pirmary-background: hsl(210 100% 8%);
+    --secondary-background: hsla(210 2% 8% / .8);
 
     /* Font colors */
     --white-text-color: hsl(210 100% 95%)
@@ -23,4 +24,7 @@ body {
     background-color: var(--pirmary-background);
     block-size: 100vh;
     inline-size: 100%;
+}
+.app-container {
+    background-color: var(--secondary-background);
 }
