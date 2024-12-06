@@ -19,12 +19,16 @@ html {
 }
 body {
     min-block-size: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pirmary-background);
 }
 .container {
-    background-color: var(--pirmary-background);
-    block-size: 100vh;
-    inline-size: 100%;
 }
 .app-container {
+    inline-size: 100%;
+    max-inline-size: 400px;
     background-color: var(--secondary-background);
+    padding: 1rem .6rem;
 }
