@@ -14,11 +14,21 @@
     /* Dark theme */
     --black-text-color: hsl(230 5% 15%);
 }
+/* Global reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
 }
+input, button {
+    border: 1px solid transparent;
+    outline: none;
+    
+    &:focus {
+        border: 1px solid #0095ff;
+    }
+}
+/* End of global reset */
 html {
     color: light-dark(var(--black-text-color), var(--white-text-color));
     font-size: 62.5%;
@@ -53,17 +63,18 @@ body {
             background-color: var(--light-pirmary-background);
             color: inherit;
             font-size: 1.6rem;
-            outline: none;
-            border: none;
+            letter-spacing: .25px;
             border-radius: 2px;
             padding: .4rem .2rem;
+
+            &::placeholder {
+                font-size: 1.2rem;
+            }
         }
 
         button {
             font-size: 1.4rem;
             padding-inline: 1rem;
-            border: none;
-            outline: none;
             border-radius: 2px;
 
             &:hover {
