@@ -1,9 +1,18 @@
 :root {
+    color-scheme: light dark;
     /* Background colors */
-    --pirmary-background: hsl(230 2% 3%);
-    --secondary-background: hsla(230 30% 8% / .8);
+    /* Light theme */
+    --light-pirmary-background: hsl(230 2% 3%);
+    --light-secondary-background: hsla(230 30% 8% / .8);
+    /* Dark theme */
+    --dark-primary-background: hsl(230 30% 98%);
+    --dark-secondary-background: hsla(230 32% 87% / .6);
+
     /* Font colors */
+    /* Light theme */
     --white-text-color: hsl(230 100% 95%);
+    /* Dark theme */
+    --black-text-color: hsl(230 5% 15%);
 }
 * {
     margin: 0;
@@ -11,7 +20,7 @@
     box-sizing: inherit;
 }
 html {
-    color: var(--white-text-color);
+    color: light-dark(var(--black-text-color), var(--white-text-color));
     font-size: 62.5%;
     font-family: monospace, sans-serif;
     box-sizing: border-box;
@@ -21,11 +30,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--pirmary-background);
+    background-color: light-dark(var(--dark-primary-background), var(--light-pirmary-background));
 }
 .todo-app {
     inline-size: 100%;
     max-inline-size: 400px;
-    background-color: var(--secondary-background);
+    background-color: light-dark(var(--dark-secondary-background), var(--light-secondary-background));
     padding: 1rem .6rem;
 }
