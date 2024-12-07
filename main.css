@@ -36,5 +36,35 @@ body {
     inline-size: 100%;
     max-inline-size: 350px;
     background-color: light-dark(var(--dark-secondary-background), var(--light-secondary-background));
+    border-radius: 4px;
     padding: 1rem .6rem;
+    
+    & .todo-app__title {
+        font-size: 3.8rem;
+        text-align: center;
+        margin-block-end: 2rem;
+    }
+
+    & .todo-app__input {
+        display: flex;
+
+        input {
+            flex-grow: 1;
+            background-color: var(--light-pirmary-background);
+            color: inherit;
+            font-size: 1.6rem;
+            outline: none;
+            border: none;
+            border-radius: 2px;
+            padding: .4rem .2rem;
+        }
+
+        button {
+            font-size: 1.4rem;
+            padding-inline: 1rem;
+            border: none;
+            outline: none;
+            border-radius: 2px;
+        }
+    }
 }
