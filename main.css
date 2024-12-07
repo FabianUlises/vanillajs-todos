@@ -23,7 +23,7 @@
 input, button {
     border: 1px solid transparent;
     outline: none;
-    
+
     &:focus {
         border: 1px solid #0095ff;
     }
@@ -57,6 +57,8 @@ body {
 
     & .todo-app__input {
         display: flex;
+        margin-block-end: .8rem;
+        border-radius: 2px;
 
         input {
             flex-grow: 1;
@@ -84,6 +86,16 @@ body {
             &:active {
                 color: #0095ff;
             }
+        }
+    }
+
+    & .todo-list {
+        list-style-type: none;
+
+        & .todo {
+            background-color: black;
+            padding: .4rem .2rem;
+            margin-block-end: .4rem
         }
     }
 }
