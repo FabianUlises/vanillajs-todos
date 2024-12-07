@@ -34,7 +34,7 @@ body {
 }
 .todo-app {
     inline-size: 100%;
-    max-inline-size: 400px;
+    max-inline-size: 350px;
     background-color: light-dark(var(--dark-secondary-background), var(--light-secondary-background));
     padding: 1rem .6rem;
 }
