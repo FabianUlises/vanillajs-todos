@@ -1,12 +1,12 @@
 :root {
     color-scheme: light dark;
     /* Background colors */
-    /* Light theme */
-    --light-pirmary-background: hsl(230 2% 3%);
-    --light-secondary-background: hsla(230 30% 8% / .8);
     /* Dark theme */
-    --dark-primary-background: hsl(230 30% 98%);
-    --dark-secondary-background: hsla(230 32% 87% / .6);
+    --dark-pirmary-background: hsl(230 2% 3%);
+    --dark-secondary-background: hsla(230 30% 8% / .8);
+    /* Light theme */
+    --light-primary-background: hsl(230 30% 98%);
+    --light-secondary-background: hsla(230 32% 87% / .6);
 
     /* Font colors */
     /* Light theme */
@@ -40,12 +40,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: light-dark(var(--dark-primary-background), var(--light-pirmary-background));
+    background-color: light-dark(var(--light-primary-background), var(--dark-pirmary-background));
 }
 .todo-app {
     inline-size: 100%;
     max-inline-size: 350px;
-    background-color: light-dark(var(--dark-secondary-background), var(--light-secondary-background));
+    background-color: light-dark(var(--light-secondary-background), var(--dark-secondary-background));
     border-radius: 4px;
     padding: 1rem .6rem;
     
@@ -62,7 +62,7 @@ body {
 
         input {
             flex-grow: 1;
-            background-color: var(--light-pirmary-background);
+            background-color: light-dark(var(--light-primary-background), var(--dark-pirmary-background));
             color: inherit;
             font-size: 1.6rem;
             letter-spacing: .25px;
@@ -76,6 +76,7 @@ body {
 
         button {
             font-size: 1.4rem;
+            letter-spacing: .25px;
             padding-inline: 1rem;
             border-radius: 2px;
 
@@ -93,9 +94,17 @@ body {
         list-style-type: none;
 
         & .todo {
-            background-color: black;
+            display: flex;
+            background-color: light-dark(var(--light-primary-background), var(--dark-pirmary-background));
+            font-size: 1.6rem;
             padding: .4rem .2rem;
-            margin-block-end: .4rem
+            border-radius: 2px;
+            margin-block-end: .4rem;
+
+            p {
+                flex-grow: 1;
+                padding-inline-start: 1rem;
+            }
         }
     }
 }
