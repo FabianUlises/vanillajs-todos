@@ -105,6 +105,12 @@ body {
                 flex-grow: 1;
                 padding-inline-start: 1rem;
             }
+
+            & .todo__icon {
+                font-size: inherit;
+                padding-inline: .4rem;
+                cursor: pointer;
+            }
         }
     }
 }
