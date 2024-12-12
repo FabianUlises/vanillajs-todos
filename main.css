@@ -1,6 +1,7 @@
 :root {
     color-scheme: light dark;
     /* Background colors */
+    --twitter-blue: #0095ff;
     /* Dark theme */
     --dark-pirmary-background: hsl(230 2% 3%);
     --dark-secondary-background: hsla(230 30% 8% / .8);
@@ -25,7 +26,7 @@ input, button {
     outline: none;
 
     &:focus {
-        border: 1px solid #0095ff;
+        border: 1px solid var(--twitter-blue);
     }
 }
 /* End of global reset */
@@ -55,12 +56,12 @@ body {
         margin-block-end: 2rem;
     }
 
-    & .todo-app__input {
+    & .todo-app__form {
         display: flex;
         margin-block-end: .8rem;
         border-radius: 2px;
 
-        input {
+        & #newTodoInput {
             flex-grow: 1;
             background-color: light-dark(var(--light-primary-background), var(--dark-pirmary-background));
             color: inherit;
@@ -70,11 +71,12 @@ body {
             padding: .4rem .2rem;
 
             &::placeholder {
+                color: var(--twitter-blue);
                 font-size: 1.2rem;
             }
         }
 
-        button {
+        & #todoBtn {
             font-size: 1.4rem;
             letter-spacing: .25px;
             padding-inline: 1rem;
