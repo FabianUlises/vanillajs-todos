@@ -95,23 +95,45 @@ body {
     & .todo-list {
         list-style-type: none;
 
+        & .todo-compeleted {
+            opacity: .75;
+
+            & .todo__text {
+                opacity: .55;
+                text-decoration: line-through;
+            }
+        }
+
         & .todo {
             display: flex;
             background-color: light-dark(var(--light-primary-background), var(--dark-pirmary-background));
             font-size: 1.6rem;
-            padding: .4rem .2rem;
-            border-radius: 2px;
             margin-block-end: .4rem;
 
-            p {
+            
+            & .todo__text {
+                padding: .4rem .2rem;
+                border-radius: 2px;
                 flex-grow: 1;
-                padding-inline-start: 1rem;
+                /* padding-inline-start: 1rem; */
+                cursor: pointer;
             }
 
             & .todo__icon {
                 font-size: inherit;
                 padding-inline: .4rem;
                 cursor: pointer;
+                border-radius: 2px;
+                transition: background-color 75ms ease;
+                border: 1px solid transparent;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, .4);
+                }
+
+                &:active {
+                    border: 1px solid var(--twitter-blue);
+                }
             }
         }
     }
