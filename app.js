@@ -13,6 +13,11 @@ const createNewTodo = () => {
         isEditing: false,
         isComplete: false
     };
+    // Appending new todo to html ul element
+    todoList.append = `
+        <li class="todo-list__item todo">${newTodo.todo}</li>
+    `;
+
 }
 
 handleTodoSubmit.addEventListener('click', createNewTodo);

@@ -13,23 +13,26 @@
         <!-- App title -->
         <h1 class="todo-app__title">Todos</h1>
         <!-- Start of input -->
-        <div class="todo-app__input">
+        <form class="todo-app__input">
             <!-- input -->
-            <input type="text" placeholder="insert new todo" id="newTodoInput">
+            <input type="text" placeholder="insert new todo" id="newTodoInput" />
             <!-- submit button -->
-            <button id="todoBtn">Submit</button>
-        </div>
+            <input type="submit" id="todoBtn" placeholder="new task" />
+        </form>
         <!-- End of input -->
          <!-- Start of todo list -->
         <ul class="todo-list">
-            <!-- Start of list item
-            <li class="todo-list__item todo">
-                <p class="todo-text">buy groceries</p>
-                <span class="todo__icon todo__icon--edit">✏️</span>
-                <span class="todo__icon todo__icon--del">🗑️</span>
-            </li>
-            End of list item -->
 
+            <li class="todo">
+                <div class="todo__content">
+                    <input 
+                        type="text"
+                        class="todo-text"
+                        value="run a mile"
+                        readonly
+                    />
+                </div>
+            </li>
 
         </ul>
         <!-- End of todo list -->
