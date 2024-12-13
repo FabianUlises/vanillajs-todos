@@ -113,7 +113,7 @@ body {
         & .todo:not(:last-child) {
             margin-block-end: .4rem;
         }
-        
+
         & .todo {
             display: flex;
             background-color: light-dark(var(--light-primary-background), var(--dark-pirmary-background));
@@ -142,7 +142,7 @@ body {
                 transition: background-color 75ms ease;
 
                 &:hover {
-                    background-color: rgba(255, 255, 255, .4);
+                    background-color: light-dark(var(--light-secondary-background), var(--dark-secondary-background));
                 }
 
                 &:active {
