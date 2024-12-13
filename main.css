@@ -92,7 +92,7 @@ body {
         }
     }
 
-    & .todo-list {
+    & .todo__list {
         list-style-type: none;
 
         & .todo-compeleted {
@@ -112,10 +112,12 @@ body {
 
             
             & .todo__text {
+                background-color: inherit;
                 padding: .4rem .2rem;
                 border-radius: 2px;
+                /* border-inline-end: 1px solid var(--green); */
                 flex-grow: 1;
-                /* padding-inline-start: 1rem; */
+                padding-inline-start: 1rem;
                 cursor: pointer;
             }
 
