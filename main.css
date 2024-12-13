@@ -78,7 +78,7 @@ body {
         }
 
         & #todoBtn {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             letter-spacing: .25px;
             padding-inline: 1rem;
             border-radius: 2px;
@@ -98,37 +98,48 @@ body {
 
         & .todo-compeleted {
             opacity: .75;
-
+            
             & .todo__text {
                 opacity: .55;
                 text-decoration: line-through;
+                border-inline-end: 1px solid var(--red) !important;
+
+                &:hover {
+                    padding-inline-start: .2rem !important;
+                }
             }
         }
 
+        & .todo:not(:last-child) {
+            margin-block-end: .4rem;
+        }
+        
         & .todo {
             display: flex;
             background-color: light-dark(var(--light-primary-background), var(--dark-pirmary-background));
             font-size: 1.6rem;
-            margin-block-end: .4rem;
-
             
             & .todo__text {
+                flex-grow: 1;
                 background-color: inherit;
                 padding: .4rem .2rem;
                 border-radius: 2px;
-                /* border-inline-end: 1px solid var(--green); */
-                flex-grow: 1;
-                padding-inline-start: 1rem;
+                border-inline-end: 1px solid var(--green);
                 cursor: pointer;
+                transition: padding-inline-start 75ms ease;
+
+                &:hover {
+                    padding-inline-start: .8rem;
+                }
             }
 
             & .todo__icon {
                 font-size: inherit;
                 padding-inline: .4rem;
-                cursor: pointer;
                 border-radius: 2px;
-                transition: background-color 75ms ease;
                 border: 1px solid transparent;
+                cursor: pointer;
+                transition: background-color 75ms ease;
 
                 &:hover {
                     background-color: rgba(255, 255, 255, .4);
