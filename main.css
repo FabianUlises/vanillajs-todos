@@ -9,7 +9,7 @@
     --dark-secondary-background: hsla(230 30% 8% / .8);
     /* Light theme */
     --light-primary-background: hsl(230 30% 98%);
-    --light-secondary-background: hsla(230 32% 87% / .6);
+    --light-secondary-background: hsl(30 75% 95%);
 
     /* Font colors */
     /* Light theme */
@@ -53,7 +53,7 @@ body {
     padding: 1rem .6rem;
     
     & .todo-app__title {
-        font-size: 3.8rem;
+        font-size: 4.2rem;
         text-align: center;
         margin-block-end: 2rem;
     }
@@ -61,7 +61,6 @@ body {
     & .todo-app__form {
         display: flex;
         margin-block-end: .8rem;
-        border-radius: 2px;
 
         & #newTodoInput {
             flex-grow: 1;
@@ -79,7 +78,7 @@ body {
         }
 
         & #todoBtn {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             letter-spacing: .25px;
             padding-inline: 1rem;
             border-radius: 2px;
