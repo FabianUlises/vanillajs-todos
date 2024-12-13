@@ -1,7 +1,9 @@
 :root {
     color-scheme: light dark;
-    /* Background colors */
+    --green: hsl(120 100% 50%);
+    --red: hsl(0, 100%, 50%);
     --twitter-blue: #0095ff;
+    /* Background colors */
     /* Dark theme */
     --dark-pirmary-background: hsl(230 2% 3%);
     --dark-secondary-background: hsla(230 30% 8% / .8);
@@ -11,9 +13,9 @@
 
     /* Font colors */
     /* Light theme */
-    --white-text-color: hsl(230 100% 95%);
-    /* Dark theme */
     --black-text-color: hsl(230 5% 15%);
+    /* Dark theme */
+    --white-text-color: hsl(230 100% 95%);
 }
 /* Global reset */
 * {
