@@ -24,12 +24,21 @@ const createNewTodo = (e) => {
     // Creating todo html element
     const todoEl = document.createElement('li');
     todoEl.classList.add('todo');
-    todoEl.innerText = newTodo.todo;
+    const todoInputField = document.createElement('input');
+    todoInputField.type = 'text';
+    todoInputField.setAttribute('value', todoInput);
+    todoInputField.setAttribute('readonly', 'readonly');
+    todoInputField.classList.add('todo__text');
+    // todoInputField.setAttribute('readOnly');
     const todoSpanDel = document.createElement('span');
+    todoSpanDel.textContent = '❌';
     todoSpanDel.classList.add('todo__icon', 'todo__icon--del');
     const todoSpanEdit = document.createElement('span');
+    todoSpanEdit.textContent = '🖊';
     todoSpanEdit.classList.add('todo__icon', 'todo__icon--edit');
+    todoEl.appendChild(todoInputField);
     todoEl.appendChild(todoSpanEdit);
+    todoEl.appendChild(todoSpanDel);
     // Adding todo to todolist
     todoList.appendChild(todoEl);
 };
