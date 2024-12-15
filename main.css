@@ -2,7 +2,7 @@
     color-scheme: light dark;
     --green: hsl(120 100% 50%);
     --red: hsl(0, 100%, 50%);
-    --twitter-blue: #0095ff;
+    --twitter-blue: hsl(205, 100%, 50%);
     /* Background colors */
     /* Dark theme */
     --dark-pirmary-background: hsl(230 2% 3%);
@@ -134,6 +134,7 @@ body {
             }
 
             & .todo__icon {
+                background-color: #2b2a33;
                 font-size: inherit;
                 padding-inline: .4rem;
                 border-radius: 2px;
@@ -142,10 +143,11 @@ body {
                 transition: background-color 75ms ease;
 
                 &:hover {
-                    background-color: light-dark(var(--light-secondary-background), var(--dark-secondary-background));
+                    background-color: hsla(0 100% 100% / .5);
                 }
 
                 &:active {
+                    background-color: hsla(0 100% 100% / .4);
                     border: 1px solid var(--twitter-blue);
                 }
             }
