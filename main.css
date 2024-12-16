@@ -45,6 +45,34 @@ body {
     align-items: center;
     background-color: light-dark(var(--light-primary-background), var(--dark-pirmary-background));
 }
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    color: var(--twitter-blue);
+    inline-size: 10rem;
+    padding-inline-start: .4rem;
+    cursor: pointer;
+}
+.select {
+    inline-size: fit-content;
+    position: relative;
+    overflow: hidden;
+    margin-block-end: .8rem;
+    margin-inline-start: auto;
+
+    &::after {
+        content: '\25bc';
+        position: absolute;
+        top: 2.5px;
+        right: 0;
+        padding-inline: 1rem;
+        block-size: 100%;;
+        pointer-events: none;
+    }
+}
 /* Animation */
 .todo-fall-animation {
     transform: translateY(100px) rotate(10deg);
