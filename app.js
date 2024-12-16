@@ -1,9 +1,9 @@
 // Element Selectors
-const handleTodoSubmit = document.querySelector('#todoBtn');
+const addTodoBtn = document.querySelector('#todoBtn');
 const newTodoInput = document.querySelector('#newTodoInput');
 const todoList = document.querySelector('.todo__list');
 // Function to create new todo
-const createNewTodo = (e) => {
+const handleTodoSubmit = (e) => {
     e.preventDefault();
     // Checking if input is valid
     if(!newTodoInput.value || newTodoInput.value === '') {
@@ -42,5 +42,15 @@ const createNewTodo = (e) => {
     // Adding todo to todolist
     todoList.appendChild(todoEl);
 };
+// Function to delete todo
+const handleDeleteTodo = (e) => {
+    const item = e.target;
+    // Selecting only element containing delete class list
+    if(item.classList[1] === 'todo__icon--del') {
+        const todo = item.parentElement;
+        todo.remove();
+    }
 
-handleTodoSubmit.addEventListener('click', createNewTodo);
+};
+todoList.addEventListener('click', handleDeleteTodo);
+addTodoBtn.addEventListener('click', handleTodoSubmit);
