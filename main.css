@@ -45,6 +45,11 @@ body {
     align-items: center;
     background-color: light-dark(var(--light-primary-background), var(--dark-pirmary-background));
 }
+/* Animation */
+.todo-fall-animation {
+    transform: translateY(100px) rotate(10deg);
+    opacity: 0; 
+}
 .todo-app {
     inline-size: 100%;
     max-inline-size: 350px;
@@ -103,9 +108,14 @@ body {
                 opacity: .55;
                 text-decoration: line-through;
                 border-inline-end: 1px solid var(--red) !important;
+                cursor: default !important;
 
                 &:hover {
                     padding-inline-start: .2rem !important;
+                }
+
+                &:focus {
+                    border: 1px solid transparent !important;
                 }
             }
         }
@@ -118,6 +128,7 @@ body {
             display: flex;
             background-color: light-dark(var(--light-primary-background), var(--dark-pirmary-background));
             font-size: 1.6rem;
+            transition: all 75ms ease;
             
             & .todo__text {
                 flex-grow: 1;

@@ -48,7 +48,10 @@ const handleTodoBtn = (e) => {
     // Selecting only element containing delete class
     if(item.classList[1] === 'todo__icon--del') {
         const todo = item.parentElement;
-        todo.remove();
+        todo.classList.add('todo-fall-animation');
+        todo.addEventListener('transitionend', () => {
+            todo.remove();
+        })
     }
     // Selecting only element containing completed class
     if(item.classList[1] === 'todo__icon--edit') {
