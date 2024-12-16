@@ -96,7 +96,7 @@ body {
     & .todo__list {
         list-style-type: none;
 
-        & .todo-compeleted {
+        & .todo-completed {
             opacity: .75;
             
             & .todo__text {

@@ -43,14 +43,19 @@ const handleTodoSubmit = (e) => {
     todoList.appendChild(todoEl);
 };
 // Function to delete todo
-const handleDeleteTodo = (e) => {
+const handleTodoBtn = (e) => {
     const item = e.target;
-    // Selecting only element containing delete class list
+    // Selecting only element containing delete class
     if(item.classList[1] === 'todo__icon--del') {
         const todo = item.parentElement;
         todo.remove();
     }
+    // Selecting only element containing completed class
+    if(item.classList[1] === 'todo__icon--edit') {
+        const todo = item.parentElement;
+        todo.classList.toggle('todo-completed');
+    }
 
 };
-todoList.addEventListener('click', handleDeleteTodo);
+todoList.addEventListener('click', handleTodoBtn);
 addTodoBtn.addEventListener('click', handleTodoSubmit);
