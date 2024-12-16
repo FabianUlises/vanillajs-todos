@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Start of todo app -->
-    <div class="todo-app">
+        <div class="todo-app">
         <!-- App title -->
         <h1 class="todo-app__title">Todos</h1>
         <!-- Start of input -->
@@ -20,9 +20,17 @@
             <input type="submit" id="todoBtn" value="Submit" />
         </form>
         <!-- End of input -->
-         <!-- Start of todo list -->
+        <!-- Start of todo list -->
         <ul class="todo__list">
-
+            <!-- Start of select options -->
+            <div class="select">
+                <select name="todos" class="filter-todo">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="uncompleted">Uncompleted</option>
+                </select>
+            </div>
+            <!-- End of select options -->
         </ul>
         <!-- End of todo list -->
     </div>
