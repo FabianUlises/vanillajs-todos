@@ -2,6 +2,7 @@
 const addTodoBtn = document.querySelector('#todoBtn');
 const newTodoInput = document.querySelector('#newTodoInput');
 const todoList = document.querySelector('.todo__list');
+const filterOption = document.querySelector('.filter-todo');
 // Function to create new todo
 const handleTodoSubmit = (e) => {
     e.preventDefault();
@@ -45,6 +46,7 @@ const handleTodoSubmit = (e) => {
 // Function to delete todo
 const handleTodoBtn = (e) => {
     const item = e.target;
+    // Logic to remove todo from list
     // Selecting only element containing delete class
     if(item.classList[1] === 'todo__icon--del') {
         const todo = item.parentElement;
@@ -53,6 +55,7 @@ const handleTodoBtn = (e) => {
             todo.remove();
         })
     }
+    // Logic to toggle completed css class
     // Selecting only element containing completed class
     if(item.classList[1] === 'todo__icon--edit') {
         const todo = item.parentElement;
@@ -60,5 +63,31 @@ const handleTodoBtn = (e) => {
     }
 
 };
+const handleFilterChange = (e) => {
+    const todos = todoList.childNodes;
+    todos.forEach((todo) => {
+        switch(e.target.value) {
+            case "all":
+                todo.style.display = 'flex';
+                break;
+            case 'completed':
+                if(todo.classList.contains('todo-completed')) {
+                    todo.style.display = "flex";
+                } else {
+                    todo.style.display = "none";
+                }
+                break;
+            case 'uncompleted':
+                if(!todo.classList.contains('todo-completed')) {
+                    todo.style.display = "flex";
+                } else {
+                    todo.style.display = "none";
+                }
+                break;
+        }
+    });
+    // console.log('change', todos);
+};
+filterOption.addEventListener('click', handleFilterChange);
 todoList.addEventListener('click', handleTodoBtn);
 addTodoBtn.addEventListener('click', handleTodoSubmit);
