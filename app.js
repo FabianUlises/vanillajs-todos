@@ -21,7 +21,6 @@ const handleTodoSubmit = (e) => {
         isEditing: false,
         isComplete: false
     };
-    console.log(newTodo.todo);
     // Creating todo html element
     const todoEl = document.createElement('li');
     todoEl.classList.add('todo');
@@ -63,6 +62,7 @@ const handleTodoBtn = (e) => {
     }
 
 };
+// Function to handle select dropdown
 const handleFilterChange = (e) => {
     const todos = todoList.childNodes;
     todos.forEach((todo) => {
@@ -86,7 +86,6 @@ const handleFilterChange = (e) => {
                 break;
         }
     });
-    // console.log('change', todos);
 };
 filterOption.addEventListener('click', handleFilterChange);
 todoList.addEventListener('click', handleTodoBtn);
