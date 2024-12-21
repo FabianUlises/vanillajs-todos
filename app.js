@@ -13,6 +13,14 @@ const saveToLocal = (todo) => {
     // Adding new todos array to local storage
     localStorage.setItem('todos', JSON.stringify(todos));
 };
+// Function to remove local todo
+const removeLocal = (todo) => {
+    // Checking if todos array exists in local storage database
+    // If not creating new array
+    let todos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
+    console.log(todo);
+    console.log(todos);
+};
 // Function to create new todo
 const handleTodoSubmit = (e) => {
     e.preventDefault();
