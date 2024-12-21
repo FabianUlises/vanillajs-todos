@@ -3,6 +3,16 @@ const addTodoBtn = document.querySelector('#todoBtn');
 const newTodoInput = document.querySelector('#newTodoInput');
 const todoList = document.querySelector('.todo__list');
 const filterOption = document.querySelector('.filter-todo');
+// Function to save data to localstorage
+const saveToLocal = (todo) => {
+    // Checking if todos array exists in local storage database
+    // If not creating new array
+    let todos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
+    // Adding new todo to todos array
+    todos.push(todo.todo);
+    // Adding new todos array to local storage
+    localStorage.setItem('todos', JSON.stringify(todos));
+};
 // Function to create new todo
 const handleTodoSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +31,8 @@ const handleTodoSubmit = (e) => {
         isEditing: false,
         isComplete: false
     };
+    // Saving todo to localstorage
+    saveToLocal(newTodo);
     // Creating todo html element
     const todoEl = document.createElement('li');
     todoEl.classList.add('todo');
