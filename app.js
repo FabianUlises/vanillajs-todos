@@ -4,12 +4,12 @@ const newTodoInput = document.querySelector('#newTodoInput');
 const todoList = document.querySelector('.todo__list');
 const filterOption = document.querySelector('.filter-todo');
 // Function to save data to localstorage
-const saveToLocal = (todo) => {
+const saveToLocal = (newTodo) => {
     // Checking if todos array exists in local storage database
     // If not creating new array
     let todos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
     // Adding new todo to todos array
-    todos.push(todo.todo);
+    todos.push(newTodo.todo);
     // Adding new todos array to local storage
     localStorage.setItem('todos', JSON.stringify(todos));
 };
@@ -18,8 +18,13 @@ const removeLocal = (todo) => {
     // Checking if todos array exists in local storage database
     // If not creating new array
     let todos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
-    console.log(todo);
+    // Creating index from todo
+    const todoIndex = todo.firstChild.value;
+    // Removing todo using splice method on todos array
+    console.log('todos:', todos);
+    todos.splice(todos.indexOf(todoIndex), 1);
     console.log(todos);
+    localStorage.setItem('todos', JSON.stringify(todos));
 };
 // Function to create new todo
 const handleTodoSubmit = (e) => {
@@ -69,6 +74,8 @@ const handleTodoBtn = (e) => {
     // Selecting only element containing delete class
     if(item.classList[1] === 'todo__icon--del') {
         const todo = item.parentElement;
+        // Removing from local storage
+        removeLocal(todo)
         todo.classList.add('todo-fall-animation');
         todo.addEventListener('transitionend', () => {
             todo.remove();
@@ -121,7 +128,7 @@ const loadLocalTodos = () => {
         todoEl.classList.add('todo');
         const todoInputField = document.createElement('input');
         todoInputField.type = 'text';
-        todoInputField.setAttribute('value', todo);
+        todoInputField.setAttribute('value', newTodo.todo);
         todoInputField.setAttribute('readonly', 'readonly');
         todoInputField.classList.add('todo__text');
         // todoInputField.setAttribute('readOnly');
